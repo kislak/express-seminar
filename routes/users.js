@@ -16,6 +16,27 @@ const getUser = (req, res) =>{
         })
 }
 
-module.export {
+
+const getUserByID = (req, res) =>{
+    const {id} = req.params
+
+    return User.findById(id).then(user => {
+        if (user){
+          return res.status(200).send(user)
+        } else {
+            return res.status(404).send('Not found')
+        }
+    })
+        .catch(error => {
+            return res
+                .status(500)
+                .send({
+                    message: `${error.message}`
+                })
+        })
+
+
+
+    module.export {
     getUser,
 }
