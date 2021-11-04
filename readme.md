@@ -17,3 +17,6 @@ insomnia client
 
 brew install --cask insomnia
 
+--------------------
+
+mongo import ObjectID _id - should I setup _id?
